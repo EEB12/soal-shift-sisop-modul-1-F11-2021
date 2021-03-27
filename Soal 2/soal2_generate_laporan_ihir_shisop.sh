@@ -2,11 +2,11 @@
 LC_ALL=C awk '
 BEGIN {FS="\t"}
 #soal A
-{if (pp<=$21/($18-$21)*100){
+{if (profit<=$21/($18-$21)*100){
 	atas=$21
 	bawah=$18-$21
 	tes=$18
-	pp=atas/bawah*100
+	profit=atas/bawah*100
 	
 	
 	ID=$1
@@ -59,11 +59,11 @@ else if($13=="Central"){
 END{
 
 #jawaban a
-printf "Transaksi terakhir dengan profit percentage terbesar yaitu %d dengan persentase %f. \n \n",ID,pp
+printf "Transaksi terakhir dengan profit percentage terbesar yaitu %d dengan persentase %.1f%%  \n",ID,profit
 
 
 #jawaban b
-printf "Daftar nama customer di Albuquerque pada tahun 2017 antara lain:\n"
+printf "\nDaftar nama customer di Albuquerque pada tahun 2017 antara lain:\n"
 
 for (orang in nama){
 	
@@ -76,50 +76,50 @@ if (Consumer<home && Consumer<Corporate){
 
 	simpul="Consumer"
 	
-	printf "Tipe segmen customer yang penjualannya paling sedikit 	adalah %s dengan %d transaksi.",simpul,Consumer
+	printf "\n Tipe segmen customer yang penjualannya paling sedikit adalah %s dengan %d transaksi.\n",simpul,Consumer
 	
 }else if(home<Consumer && home<Corporate){
 	simpul="Home Office"
 	
-	printf "Tipe segmen customer yang penjualannya paling sedikit adalah %s dengan %d transaksi.",simpul,home
+	printf "\nTipe segmen customer yang penjualannya paling sedikit adalah %s dengan %d transaksi.\n",simpul,home
 	
 }else if(Coporate<Consumer && Corporate<home){
 	simpul="Corporate"
 	
 	
-	printf "Tipe segmen customer yang penjualannya paling sedikit 	adalah %s dengan %d transaksi.",simpul,Corporate
+	printf "\nTipe segmen customer yang penjualannya paling sedikit 	adalah %s dengan %d transaksi.\n",simpul,Corporate
 	
 }
 
 #jawaban D
-printf "ini %d \n",barat
+
 if (utara<barat && utara<selatan && utara<tengah){
 
-	simpul="Timrur"
+	simpul="North"
 	
-	printf "Wilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,utara
+	printf "\nWilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,utara
 	
 }else if (barat<utara && barat<selatan && barat<tengah){
 
-	simpul="barat"
+	simpul="West"
 	
-	printf "Wilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,barat
+	printf "\nWilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,barat
 	
 
 
 }else if (selatan<utara && selatan<barat && selatan<tengah){
 
-	simpul="selatan"
+	simpul="South"
 	
-	printf "Wilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,selatan
+	printf "\nWilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,selatan
 	
 
 
 }else if (tengah<utara && tengah<barat && tengah<selatan){
 
-	simpul="tengah"
+	simpul="Central"
 	
-	printf "Wilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,tengah
+	printf "\nWilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,tengah
 	
 
 
