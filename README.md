@@ -268,7 +268,49 @@ Kuuhaku adalah orang yang sangat suka mengoleksi foto-foto digital, namun Kuuhak
 Membuat script untuk mengunduh 23 gambar dari "https://loremflickr.com/320/240/kitten" serta menyimpan log-nya ke file "Foto.log". Karena gambar yang diunduh acak, ada kemungkinan gambar yang sama terunduh lebih dari sekali, oleh karena itu kalian harus menghapus gambar yang sama (tidak perlu mengunduh gambar lagi untuk menggantinya). Kemudian menyimpan gambar-gambar tersebut dengan nama "Koleksi_XX" dengan nomor yang berurutan tanpa ada nomor yang hilang (contoh : Koleksi_01, Koleksi_02, ...)
 
 ### jawaban
+```
+#!/bin/bash
 
+for((i=1; i<=23; i++))
+do
+	wget -O "Koleksi_$i.jpg" -a Foto.log https://loremflickr.com/320/240/kitten
+done
+
+for((i=1; i<=23; i++))
+do
+	for((j=1; j<i; j++))
+	do
+		if comm Koleksi_$j.jpg Koleksi_$i.jpg &> /dev/null
+		then
+			rm Koleksi_$i.jpg
+			break
+		fi
+	done
+done
+
+for((i=1; i<=23; i++))
+do
+	if [ ! -f Koleksi_$i.jpg ] 
+	then
+		for((j=23; j>i; j--))
+		do
+			if [ -f Koleksi_$j.jpg ];
+			then
+				mv Koleksi_$j.jpg Koleksi_$i.jpg
+				break
+			fi
+		done
+	fi
+done
+
+for((i=1; i<=9; i++))
+do
+	if [ -f Koleksi_$i.jpg ]
+	then
+		mv Koleksi_$i.jpg Koleksi_0$i.jpg
+	fi
+done
+```
 Untuk soal a, kita diminta untuk mengunduh 23 gambar dari link yang diberikan dan menghapus gambar yang sama tanpa perlu mengunduhnya lagi. Lalu foto-foto yang telah disimpan tersebut disimpan dengan nama "Koleksi_XX
 Pertama kita mengunduh gambar menggunakan link sebanyak 23 kali. Lalu kita menggunakan fungsi comm untuk menemukan gambar yang terduplikasi. Setelah proses download selesai, kita mengecek apakah ada nomor urutan yang terlewat dan merename file terakhir dengan nomor file yang hilang tersebut. Agar nomer pada nama file menjadi double digit, dilakukan iterasi 9 kali untuk merename file dengan nomor single digit
 
@@ -276,12 +318,55 @@ Pertama kita mengunduh gambar menggunakan link sebanyak 23 kali. Lalu kita mengg
 Karena Kuuhaku malas untuk menjalankan script tersebut secara manual, ia juga meminta kalian untuk menjalankan script tersebut sehari sekali pada jam 8 malam untuk tanggal-tanggal tertentu setiap bulan, yaitu dari tanggal 1 tujuh hari sekali (1,8,...), serta dari tanggal 2 empat hari sekali(2,6,...). Supaya lebih rapi, gambar yang telah diunduh beserta log-nya, dipindahkan ke folder dengan nama tanggal unduhnya dengan format "DD-MM-YYYY" (contoh : "13-03-2023").
 
 ### Jawaban
+```
+cd /home/nazhwaameera/Desktop/Kuliah/Praktikum
+dirName=$(date + "%d-%m-%Y")
+mkdir $dirName
+
+bash /home/nazhwaameera/Desktop/Kuliah/Praktikum/soal3a.sh
+mv *.jpg $dirName
+mv Foto.log $dirName
+
+```
 Untuk soal b, kita diminta untuk menjalankan script yang sudah kita buat sebelumnya tiap sehari sekali pada jam 8 malam untuk tanggal 1 tujuh hari sekali dan tanggal 2 empat hari sekali. Kita juga diminta untuk menyimpan gambar dan lognya ke folder dengan format nama tanggal unduhnya ("DD-MM-YYYY")
 
 ### c.
 Agar kuuhaku tidak bosan dengan gambar anak kucing, ia juga memintamu untuk mengunduh gambar kelinci dari "https://loremflickr.com/320/240/bunny". Kuuhaku memintamu mengunduh gambar kucing dan kelinci secara bergantian (yang pertama bebas. contoh : tanggal 30 kucing > tanggal 31 kelinci > tanggal 1 kucing > ... ). Untuk membedakan folder yang berisi gambar kucing dan gambar kelinci, nama folder diberi awalan "Kucing_" atau "Kelinci_" (contoh : "Kucing_13-03-2023").
 
 ### jawaban
+
+```
+#!/bin/bash
+
+directory=$(date +"%d-%m-%Y")
+
+mkdir Kucing_$directory
+mkdir Kelinci_$directory
+
+hitung=1
+for((i=1; i<=31; i++))
+do
+	if [ $((i%2)) -eq 0 ]
+	then
+		wget -O "Kucing_$hitung.jpg" -a Foto.log https://loremflickr.com/320/240/kitten
+	elif [ $((i%2)) -eq 1 ]
+	then
+		wget -O "Kelinci_$hitung.jpg" -a Foto.log https://loremflickr.com/320/240/bunny
+	fi
+	let hitung=$hitung+1
+done
+
+for((i=1; i<=31; i++))
+do
+	if [ $((i%2)) -eq 0 ]
+	then
+		mv Kucing_$i.jpg Kucing_$directory
+	elif [ $((i%2)) -eq 1 ]
+	then
+		mv Kelinci_$i.jpg Kelinci_$directory
+	fi
+done
+```
 Untuk soal c, kita diminta untuk mendownload gambar kelinci dan kucing secara berselang-seling. Unduhan kemudian disimpan sesuai dalam folder jenis foto (kelinci atau kucing) dengan format nama "Kucing_" atau "Kelinci_" beserta tanggal unduh di belakangnya.
 Pertama kita buat direktori tempat di mana foto-foto kucing dan kelinci akan disimpan. Kemudian, kita melakukan iterasi sebanyak 31 hari (hitungan hari terbanyak dalam satu bulan) lalu untuk hari-hari genap kita akan mendownload gambar kucing, sedang untuk hari-hari ganjil kita akan medownload gambar kelinci. Setelah iterasi selesai, kita memindahkan file-file yang telah didownload ke dalam direktori yang sudah dibuat.
 
@@ -289,6 +374,19 @@ Pertama kita buat direktori tempat di mana foto-foto kucing dan kelinci akan dis
 Untuk mengamankan koleksi Foto dari Steven, Kuuhaku memintamu untuk membuat script yang akan memindahkan seluruh folder ke zip yang diberi nama “Koleksi.zip” dan mengunci zip tersebut dengan password berupa tanggal saat ini dengan format "MMDDYYYY" (contoh : “03032003”).
 
 ### jawaban
+
+```
+#!/bin/bash
+
+cd /home/nazhwaameera/Desktop/Kuliah/Praktikum
+
+tanggal=$(date +"%m%d%Y")
+
+for dirName in K*_*
+do
+	zip --password $tanggal -r Koleksi $dirName
+done
+```
 Untuk soal d, kita diminta untuk memindahkan seluruh folder ke zip lalu memberi password zip tersebut dengan tanggal berformat "MMDDYYYY"
 Pertama kita berpindah ke direktori tempat file berada. Lalu kita mengeset sebuah variabel untuk menyimpan tanggal -variabel ini kemudian akan digunakan sebagai password zip file. Lalu, kita mencari direktori yang berawalan K (Kelinci dan Kucing) untuk dimasukkan ke dalam folder yang sama dan di zip. Kita menjalankan command -r agar semua file di dalam folder masuk ke dalam file zip yang akan dibuat.
 
