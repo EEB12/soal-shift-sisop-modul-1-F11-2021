@@ -36,7 +36,7 @@ Profit Percentage = (Profit/(Sales-Profit))
 ```
 
 
-### jawaban
+### Jawaban
 ```
 LC_ALL=C awk '
 BEGIN {FS="\t"}
@@ -76,7 +76,7 @@ TokoShiSop berfokus tiga segment customer, antara lain: Home Office,
 Consumer, dan Corporate. Clemong ingin meningkatkan penjualan pada segmen
 customer yang paling sedikit. Oleh karena itu, Clemong membutuhkan **segment customer** 
 dan **jumlah transaksinya yang paling sedikit**.
-### jawaban
+### Jawaban
 ```
 #soal c
 {if($8=="Consumer"){
@@ -119,7 +119,7 @@ diatas adalah untuk mencari segment terkecil dengan total tranksasinya
 TokoShiSop membagi wilayah bagian (region) penjualan menjadi empat bagian,
 antara lain: Central, East, South, dan West. Manis ingin mencari **wilayah bagian(region) yang memiliki total keuntungan (profit) paling sedikit** dan **total keuntungan wilayah tersebut**.
 
-### jawaban
+### Jawaban
 untuk pertanyaan ini mirip dengan yang c hanya saja yang dicari adalah region dengan keuntungan paling sedikit
 ```
 {if($13=="West"){
@@ -267,7 +267,7 @@ Kuuhaku adalah orang yang sangat suka mengoleksi foto-foto digital, namun Kuuhak
 ### a.
 Membuat script untuk mengunduh 23 gambar dari "https://loremflickr.com/320/240/kitten" serta menyimpan log-nya ke file "Foto.log". Karena gambar yang diunduh acak, ada kemungkinan gambar yang sama terunduh lebih dari sekali, oleh karena itu kalian harus menghapus gambar yang sama (tidak perlu mengunduh gambar lagi untuk menggantinya). Kemudian menyimpan gambar-gambar tersebut dengan nama "Koleksi_XX" dengan nomor yang berurutan tanpa ada nomor yang hilang (contoh : Koleksi_01, Koleksi_02, ...)
 
-### jawaban
+### Jawaban
 ```
 #!/bin/bash
 
@@ -333,7 +333,7 @@ Untuk soal b, kita diminta untuk menjalankan script yang sudah kita buat sebelum
 ### c.
 Agar kuuhaku tidak bosan dengan gambar anak kucing, ia juga memintamu untuk mengunduh gambar kelinci dari "https://loremflickr.com/320/240/bunny". Kuuhaku memintamu mengunduh gambar kucing dan kelinci secara bergantian (yang pertama bebas. contoh : tanggal 30 kucing > tanggal 31 kelinci > tanggal 1 kucing > ... ). Untuk membedakan folder yang berisi gambar kucing dan gambar kelinci, nama folder diberi awalan "Kucing_" atau "Kelinci_" (contoh : "Kucing_13-03-2023").
 
-### jawaban
+### Jawaban
 
 ```
 #!/bin/bash
@@ -373,7 +373,7 @@ Pertama kita buat direktori tempat di mana foto-foto kucing dan kelinci akan dis
 ### d.
 Untuk mengamankan koleksi Foto dari Steven, Kuuhaku memintamu untuk membuat script yang akan memindahkan seluruh folder ke zip yang diberi nama “Koleksi.zip” dan mengunci zip tersebut dengan password berupa tanggal saat ini dengan format "MMDDYYYY" (contoh : “03032003”).
 
-### jawaban
+### Jawaban
 
 ```
 #!/bin/bash
@@ -393,7 +393,7 @@ Pertama kita berpindah ke direktori tempat file berada. Lalu kita mengeset sebua
 ### e.
 Karena kuuhaku hanya bertemu Steven pada saat kuliah saja, yaitu setiap hari kecuali sabtu dan minggu, dari jam 7 pagi sampai 6 sore, ia memintamu untuk membuat koleksinya ter-zip saat kuliah saja, selain dari waktu yang disebutkan, ia ingin koleksinya ter-unzip dan tidak ada file zip sama sekali.
 
-### jawaban
+### Jawaban
 Untuk soal e, kita diminta untuk mengekstrak file zip yang sudah dibuat dan kembali membuat zip file pada jam-jam dan hari-hari tertentu. 
 Untuk menyelesaikan soal e, kita hanya perlu menuliskan perintah di crontab agar pada jam-jam yang diminta perintah yang sesuai dieksekusi.
 
