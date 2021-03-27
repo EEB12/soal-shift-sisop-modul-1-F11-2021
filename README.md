@@ -1,21 +1,21 @@
-# soal-shift-sisop-modul-1-F11-2021
+# Soal-Shift-Sisop-Modul-1-F11-2021
 
 ## Soal No. 1
 Ryujin baru saja diterima sebagai IT support di perusahaan Bukapedia. Dia diberikan tugas untuk membuat laporan harian untuk aplikasi internal perusahaan, ticky. Terdapat 2 laporan yang harus dia buat, yaitu laporan daftar peringkat pesan error terbanyak yang dibuat oleh ticky dan laporan penggunaan user pada aplikasi ticky. Untuk membuat laporan tersebut, Ryujin harus melakukan beberapa hal berikut :
 
-### 1.a
+### a
 Mengumpulkan informasi dari log aplikasi yang terdapat pada file syslog.log. Informasi yang diperlukan antara lain: jenis log (ERROR/INFO), pesan log, dan username pada setiap baris lognya. Karena Ryujin merasa kesulitan jika harus memeriksa satu per satu baris secara manual, dia menggunakan regex untuk mempermudah pekerjaannya. Bantulah Ryujin membuat regex tersebut.
 
-### 1.b
+### b
 Kemudian, Ryujin harus menampilkan semua pesan error yang muncul beserta jumlah kemunculannya.
 
-### 1.c
+### c
 Ryujin juga harus dapat menampilkan jumlah kemunculan log ERROR dan INFO untuk setiap user-nya. Setelah semua informasi yang diperlukan telah disiapkan, kini saatnya Ryujin menuliskan semua informasi tersebut ke dalam laporan dengan format file csv.
 
-### 1.d
+### d
 Semua informasi yang didapatkan pada poin b dituliskan ke dalam file error_message.csv dengan header Error,Count yang kemudian diikuti oleh daftar pesan error dan jumlah kemunculannya diurutkan berdasarkan jumlah kemunculan pesan error dari yang terbanyak.
 
-### 1.e
+### e
 Semua informasi yang didapatkan pada poin c dituliskan ke dalam file user_statistic.csv dengan header Username,INFO,ERROR diurutkan berdasarkan username secara ascending. Catatan :
 	- Setiap baris pada file syslog.log mengikuti pola berikut :
 	  <time> <hostname> <app_name>: <log_type> <log_message> (<username>)
@@ -26,7 +26,7 @@ Steven dan Manis mendirikan sebuah startup bernama “TokoShiSop”. Sedangkan k
 
 Tiap tahunnya, TokoShiSop mengadakan Rapat Kerja yang membahas bagaimana hasil penjualan dan strategi kedepannya yang akan diterapkan. Kamu sudah sangat menyiapkan sangat matang untuk raker tahun ini. Tetapi tiba-tiba, Steven, Manis, dan Clemong meminta kamu untuk mencari beberapa kesimpulan dari data penjualan “Laporan-TokoShiSop.tsv”.
 
-### 2.a
+### a
 Steven ingin mengapresiasi kinerja karyawannya selama ini dengan mengetahui
 **Row ID** dan **profit percentage terbesar** (jika hasil profit percentage terbesar
 lebih dari 1, maka ambil Row ID yang paling besar). Karena kamu bingung,
@@ -56,7 +56,7 @@ BEGIN {FS="\t"}
 ```
 Penjelasan :
 	diawal awal digunakan LC_ALL agar dari linux bisa dapat membedakan antara titik dan koma. kemudian BEGIN {FS="\t"} digunakan sebagai separator untuk tab karena file dokumen yang akan digunakan berformat .tsv. Untuk mencari persentase profit terbesar digunakan `if (profit<=$21/($18-$21)*100)` yang berfungsi untuk membandingkan persentase profit data sebelum dengan sesudah, lalu jika lebih kecil maka variabel profit yang berfungsi untuk menyimpan persentasenya dan id akan diupdate
-### 2.b
+### b
 Clemong memiliki rencana promosi di Albuquerque menggunakan metode MLM.
 Oleh karena itu, Clemong membutuhkan daftar **nama customer pada transaksi tahun 2017 di Albuquerque**.
 ### Jawaban
@@ -71,7 +71,7 @@ pada no 2b yang dicari adalah daftar nama customer pada tranksaksi tahun 2017 da
 ```
 Penjelasan :
 jadi sesuai apa yang diminta dengan soal 2b untuk bisa mencari daftar nama customer pada tranksaksi tahun 2017 dan di Albuquerque maka digunakan `if($3 ~ /17/ && $10=="Albuquerque"` lalu jika persyaratan terpenuhi maka array nama akan tertambahi dengan $7 dimana $7 adalah nama customer
-### 2.c
+### c
 TokoShiSop berfokus tiga segment customer, antara lain: Home Office,
 Consumer, dan Corporate. Clemong ingin meningkatkan penjualan pada segmen
 customer yang paling sedikit. Oleh karena itu, Clemong membutuhkan **segment customer** 
@@ -115,7 +115,7 @@ if (Consumer<home && Consumer<Corporate){
 }
 ```
 diatas adalah untuk mencari segment terkecil dengan total tranksasinya
-### 2.d
+### d
 TokoShiSop membagi wilayah bagian (region) penjualan menjadi empat bagian,
 antara lain: Central, East, South, dan West. Manis ingin mencari **wilayah bagian(region) yang memiliki total keuntungan (profit) paling sedikit** dan **total keuntungan wilayah tersebut**.
 
@@ -178,7 +178,7 @@ if (timur<barat && timur<selatan && timur<tengah){
 
 ```
 
-### 2.e
+### e
 diharapkan bisa membuat sebuah script yang akan menghasilkan file “hasil.txt” 
 
 ### Jawaban
