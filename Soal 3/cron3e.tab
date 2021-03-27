@@ -1,0 +1,2 @@
+0 18 * * 1-5 cd /home/nazhwaameera/Desktop/Kuliah/Praktikum && tanggal$(date +"\%m\%d\%Y") && unzip --password $tanggal Koleksi.zip && rm Koleksi.zip
+0 7 * * 1-5 / bin/bash /home/nazhwaameera/Desktop/Kuliah/Praktikum/soal3d.sh
