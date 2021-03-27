@@ -50,7 +50,7 @@ else if($13=="Central"){
 	tengah+=$21
 	
 }else if($13=="East"){
-	utara+=$21
+	timur+=$21
 	
 }
 
@@ -93,7 +93,7 @@ if (Consumer<home && Consumer<Corporate){
 
 #jawaban D
 
-if (utara<barat && utara<selatan && utara<tengah){
+if (timur<barat && timur<selatan && timur<tengah){
 
 	simpul="North"
 	
@@ -107,7 +107,7 @@ if (utara<barat && utara<selatan && utara<tengah){
 	
 
 
-}else if (selatan<utara && selatan<barat && selatan<tengah){
+}else if (selatan<timur && selatan<barat && selatan<tengah){
 
 	simpul="South"
 	
@@ -115,7 +115,7 @@ if (utara<barat && utara<selatan && utara<tengah){
 	
 
 
-}else if (tengah<utara && tengah<barat && tengah<selatan){
+}else if (tengah<timur&& tengah<barat && tengah<selatan){
 
 	simpul="Central"
 	

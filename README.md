@@ -100,6 +100,147 @@ diatas adalah untuk mencari segment terkecil dengan total tranksasinya
 TokoShiSop membagi wilayah bagian (region) penjualan menjadi empat bagian,
 antara lain: Central, East, South, dan West. Manis ingin mencari **wilayah bagian(region) yang memiliki total keuntungan (profit) paling sedikit** dan **total keuntungan wilayah tersebut**.
 
+### jawaban
+untuk pertanyaan ini mirip dengan yang c hanya saja yang dicari adalah region dengan keuntungan paling sedikit
+```
+{if($13=="West"){
+	
+	barat+=$21
+}
+else if($13=="South"){
+	selatan+=$21
+	
+}
+else if($13=="Central"){
+	tengah+=$21
+	
+}else if($13=="East"){
+	timur+=$21
+	
+}
+
+}
+
+```
+mirip dengan yang 2c tetapi perbedaanya adalah ketika persyaratan terpenuhi maka yang ditambahkan bukan totalnya tetapi total profitnya. contoh jika $13(region) adalah west maka variabel barat akan ketambahan dengan profit pada row tersebut. kemudian untuk mencari yang paling terkecil adalah berikut...
+
+```
+if (timur<barat && timur<selatan && timur<tengah){
+
+	simpul="North"
+	
+	printf "\nWilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,utara
+	
+}else if (barat<utara && barat<selatan && barat<tengah){
+
+	simpul="West"
+	
+	printf "\nWilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,barat
+	
+
+
+}else if (selatan<timur && selatan<barat && selatan<tengah){
+
+	simpul="South"
+	
+	printf "\nWilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,selatan
+	
+
+
+}else if (tengah<timur&& tengah<barat && tengah<selatan){
+
+	simpul="Central"
+	
+	printf "\nWilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,tengah
+	
+
+
+}
+
+```
+
 ### 2.e
+diharapkan bisa membuat sebuah script yang akan menghasilkan file “hasil.txt” 
+
+### Jawaban
+
+```
+END{
+
+#jawaban a
+printf "Transaksi terakhir dengan profit percentage terbesar yaitu %d dengan persentase %.1f%%  \n",ID,profit
+
+
+#jawaban b
+printf "\nDaftar nama customer di Albuquerque pada tahun 2017 antara lain:\n"
+
+for (orang in nama){
+	
+	printf "%s \n",orang
+}
+
+
+#jawaban c
+if (Consumer<home && Consumer<Corporate){
+
+	simpul="Consumer"
+	
+	printf "\n Tipe segmen customer yang penjualannya paling sedikit adalah %s dengan %d transaksi.\n",simpul,Consumer
+	
+}else if(home<Consumer && home<Corporate){
+	simpul="Home Office"
+	
+	printf "\nTipe segmen customer yang penjualannya paling sedikit adalah %s dengan %d transaksi.\n",simpul,home
+	
+}else if(Coporate<Consumer && Corporate<home){
+	simpul="Corporate"
+	
+	
+	printf "\nTipe segmen customer yang penjualannya paling sedikit 	adalah %s dengan %d transaksi.\n",simpul,Corporate
+	
+}
+
+#jawaban D
+
+if (timur<barat && timur<selatan && timur<tengah){
+
+	simpul="North"
+	
+	printf "\nWilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,utara
+	
+}else if (barat<utara && barat<selatan && barat<tengah){
+
+	simpul="West"
+	
+	printf "\nWilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,barat
+	
+
+
+}else if (selatan<timur && selatan<barat && selatan<tengah){
+
+	simpul="South"
+	
+	printf "\nWilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,selatan
+	
+
+
+}else if (tengah<timur&& tengah<barat && tengah<selatan){
+
+	simpul="Central"
+	
+	printf "\nWilayah bagian (region) yang memiliki total keuntungan (profit) yang paling sedikit adalah %s dengan total keuntungan %d ",simpul,tengah
+	
+
+
+}
+
+
+}
+
+' /home/rayhan/Downloads/Laporan-TokoShiSop.tsv > hasil.txt
+```
+
+diatas adalah output dari nomer 2a,2b,2c dan 2d. digunakan END yang isinya akan dilaksakanan terakhir. kemudian `/home/rayhan/Downloads/Laporan-TokoShiSop.tsv > hasil.txt` berguna untuk mengambil dokumen TokoShiSop.tsv dan output akan ditaruh di hasil.txt
+
 
 
