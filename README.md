@@ -267,15 +267,36 @@ Kuuhaku adalah orang yang sangat suka mengoleksi foto-foto digital, namun Kuuhak
 ### a.
 Membuat script untuk mengunduh 23 gambar dari "https://loremflickr.com/320/240/kitten" serta menyimpan log-nya ke file "Foto.log". Karena gambar yang diunduh acak, ada kemungkinan gambar yang sama terunduh lebih dari sekali, oleh karena itu kalian harus menghapus gambar yang sama (tidak perlu mengunduh gambar lagi untuk menggantinya). Kemudian menyimpan gambar-gambar tersebut dengan nama "Koleksi_XX" dengan nomor yang berurutan tanpa ada nomor yang hilang (contoh : Koleksi_01, Koleksi_02, ...)
 
+### jawaban
+
+Untuk soal a, kita diminta untuk mengunduh 23 gambar dari link yang diberikan dan menghapus gambar yang sama tanpa perlu mengunduhnya lagi. Lalu foto-foto yang telah disimpan tersebut disimpan dengan nama "Koleksi_XX
+Pertama kita mengunduh gambar menggunakan link sebanyak 23 kali. Lalu kita menggunakan fungsi comm untuk menemukan gambar yang terduplikasi. Setelah proses download selesai, kita mengecek apakah ada nomor urutan yang terlewat dan merename file terakhir dengan nomor file yang hilang tersebut. Agar nomer pada nama file menjadi double digit, dilakukan iterasi 9 kali untuk merename file dengan nomor single digit
+
 ### b.
 Karena Kuuhaku malas untuk menjalankan script tersebut secara manual, ia juga meminta kalian untuk menjalankan script tersebut sehari sekali pada jam 8 malam untuk tanggal-tanggal tertentu setiap bulan, yaitu dari tanggal 1 tujuh hari sekali (1,8,...), serta dari tanggal 2 empat hari sekali(2,6,...). Supaya lebih rapi, gambar yang telah diunduh beserta log-nya, dipindahkan ke folder dengan nama tanggal unduhnya dengan format "DD-MM-YYYY" (contoh : "13-03-2023").
+
+### Jawaban
+Untuk soal b, kita diminta untuk menjalankan script yang sudah kita buat sebelumnya tiap sehari sekali pada jam 8 malam untuk tanggal 1 tujuh hari sekali dan tanggal 2 empat hari sekali. Kita juga diminta untuk menyimpan gambar dan lognya ke folder dengan format nama tanggal unduhnya ("DD-MM-YYYY")
 
 ### c.
 Agar kuuhaku tidak bosan dengan gambar anak kucing, ia juga memintamu untuk mengunduh gambar kelinci dari "https://loremflickr.com/320/240/bunny". Kuuhaku memintamu mengunduh gambar kucing dan kelinci secara bergantian (yang pertama bebas. contoh : tanggal 30 kucing > tanggal 31 kelinci > tanggal 1 kucing > ... ). Untuk membedakan folder yang berisi gambar kucing dan gambar kelinci, nama folder diberi awalan "Kucing_" atau "Kelinci_" (contoh : "Kucing_13-03-2023").
 
+### jawaban
+Untuk soal c, kita diminta untuk mendownload gambar kelinci dan kucing secara berselang-seling. Unduhan kemudian disimpan sesuai dalam folder jenis foto (kelinci atau kucing) dengan format nama "Kucing_" atau "Kelinci_" beserta tanggal unduh di belakangnya.
+Pertama kita buat direktori tempat di mana foto-foto kucing dan kelinci akan disimpan. Kemudian, kita melakukan iterasi sebanyak 31 hari (hitungan hari terbanyak dalam satu bulan) lalu untuk hari-hari genap kita akan mendownload gambar kucing, sedang untuk hari-hari ganjil kita akan medownload gambar kelinci. Setelah iterasi selesai, kita memindahkan file-file yang telah didownload ke dalam direktori yang sudah dibuat.
+
 ### d.
 Untuk mengamankan koleksi Foto dari Steven, Kuuhaku memintamu untuk membuat script yang akan memindahkan seluruh folder ke zip yang diberi nama “Koleksi.zip” dan mengunci zip tersebut dengan password berupa tanggal saat ini dengan format "MMDDYYYY" (contoh : “03032003”).
 
+### jawaban
+Untuk soal d, kita diminta untuk memindahkan seluruh folder ke zip lalu memberi password zip tersebut dengan tanggal berformat "MMDDYYYY"
+Pertama kita berpindah ke direktori tempat file berada. Lalu kita mengeset sebuah variabel untuk menyimpan tanggal -variabel ini kemudian akan digunakan sebagai password zip file. Lalu, kita mencari direktori yang berawalan K (Kelinci dan Kucing) untuk dimasukkan ke dalam folder yang sama dan di zip. Kita menjalankan command -r agar semua file di dalam folder masuk ke dalam file zip yang akan dibuat.
+
 ### e.
 Karena kuuhaku hanya bertemu Steven pada saat kuliah saja, yaitu setiap hari kecuali sabtu dan minggu, dari jam 7 pagi sampai 6 sore, ia memintamu untuk membuat koleksinya ter-zip saat kuliah saja, selain dari waktu yang disebutkan, ia ingin koleksinya ter-unzip dan tidak ada file zip sama sekali.
+
+### jawaban
+Untuk soal e, kita diminta untuk mengekstrak file zip yang sudah dibuat dan kembali membuat zip file pada jam-jam dan hari-hari tertentu. 
+Untuk menyelesaikan soal e, kita hanya perlu menuliskan perintah di crontab agar pada jam-jam yang diminta perintah yang sesuai dieksekusi.
+
 
