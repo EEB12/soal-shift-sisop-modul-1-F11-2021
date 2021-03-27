@@ -1,8 +1,7 @@
 # Soal-Shift-Sisop-Modul-1-F11-2021
 
-Anggota : * Taqqara Rayhan 05111940000121
-	  * Nazhwa Ameera 05111940000133
-	  * Julietta Anastasia 05111940000033
+Markup : * Bullet list
+         
 	  
 ## Soal No. 1
 Ryujin baru saja diterima sebagai IT support di perusahaan Bukapedia. Dia diberikan tugas untuk membuat laporan harian untuk aplikasi internal perusahaan, ticky. Terdapat 2 laporan yang harus dia buat, yaitu laporan daftar peringkat pesan error terbanyak yang dibuat oleh ticky dan laporan penggunaan user pada aplikasi ticky. Untuk membuat laporan tersebut, Ryujin harus melakukan beberapa hal berikut :
