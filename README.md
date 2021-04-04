@@ -46,7 +46,24 @@ Berikut adalah hasil outputnya :
 <img width="392" alt="output 1b" src="https://user-images.githubusercontent.com/74484044/113507350-15d5a500-9574-11eb-9ad5-9c6cd1f00808.png"> <img width="384" alt="output 1 1b" src="https://user-images.githubusercontent.com/74484044/113507356-20903a00-9574-11eb-95f0-8927e73ecb59.png">
 
 ### Bagian c
-Ryujin juga harus dapat menampilkan jumlah kemunculan log ERROR dan INFO untuk setiap user-nya, serta menuliskan semua informasi tersebut ke dalam laporan dengan format file csv.
+Ryujin juga harus dapat menampilkan jumlah kemunculan log ERROR dan INFO untuk setiap user-nya, serta menuliskan semua informasi tersebut ke dalam laporan dengan format file csv. Berikut penjelasannya :
+- Digunakan untuk memotong baris pesan, sehingga hanya meninggalkan username pengguna saja
+```
+username=`cut -d"(" -f2 < syslog.log | cut -d")" -f1 | sort | uniq`
+```
+- sort digunakan untuk mengurutkan baris hasil cut diatas secara berurut sesuai abjad a-z
+- Lalu menggunakan syntax dibawah ini untuk mengetahui jumlah error dan info dari masing-masing pengguna
+```
+user_error=$(grep -cP "ERROR.*($name)" syslog.log);
+user_info=$(grep -cP "INFO.*($name)" syslog.log);
+```
+- Kemudian mencetak hasil dengan urutan username, jumlah error, jumlah info, dengan memanggil fungsi yang telah kita buat diatas
+```
+for name in $username
+do
+    printf "%s, Error : %d, Info : %d\n" $name "$user_error" "$user_info"
+done
+```
 
 ### Bagian d
 Semua informasi yang didapatkan pada poin b dituliskan ke dalam file error_message.csv dengan header Error,Count yang kemudian diikuti oleh daftar pesan error dan jumlah kemunculannya diurutkan berdasarkan jumlah kemunculan pesan error dari yang terbanyak. Berikut syntax-nya :
