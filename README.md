@@ -236,11 +236,11 @@ diharapkan bisa membuat sebuah script yang akan menghasilkan file â€œhasil.txtâ€
 ```
 END{
 
-#jawaban a
+#jawaban 2.A
 printf "Transaksi terakhir dengan profit percentage terbesar yaitu %d dengan persentase %.1f%%  \n",ID,profit
 
 
-#jawaban b
+#jawaban 2.B
 printf "\nDaftar nama customer di Albuquerque pada tahun 2017 antara lain:\n"
 
 for (orang in nama){
@@ -249,7 +249,7 @@ for (orang in nama){
 }
 
 
-#jawaban c
+#jawaban 2.C
 if (Consumer<home && Consumer<Corporate){
 
 	simpul="Consumer"
@@ -269,7 +269,7 @@ if (Consumer<home && Consumer<Corporate){
 	
 }
 
-#jawaban D
+#jawaban 2.D
 
 if (timur<barat && timur<selatan && timur<tengah){
 
@@ -310,7 +310,8 @@ if (timur<barat && timur<selatan && timur<tengah){
 ```
 
 diatas adalah output dari nomer 2a,2b,2c dan 2d. digunakan END yang isinya akan dilaksakanan terakhir. kemudian `/home/rayhan/Downloads/Laporan-TokoShiSop.tsv > hasil.txt` berguna untuk mengambil dokumen TokoShiSop.tsv dan output akan ditaruh di hasil.txt
-
+isi dari hasil.txt
+![alt text](https://github.com/EEB12/tugas-socket/blob/main/hasil.JPG?raw=true "2E" )
 ## Soal No.3
 Kuuhaku adalah orang yang sangat suka mengoleksi foto-foto digital, namun Kuuhaku juga merupakan seorang yang pemalas sehingga ia tidak ingin repot-repot mencari foto, selain itu ia juga seorang pemalu, sehingga ia tidak ingin ada orang yang melihat koleksinya tersebut, sayangnya ia memiliki teman bernama Steven yang memiliki rasa kepo yang luar biasa. Kuuhaku pun memiliki ide agar Steven tidak bisa melihat koleksinya, serta untuk mempermudah hidupnya, yaitu dengan meminta bantuan kalian. Idenya adalah :
 
@@ -452,6 +453,10 @@ Karena kuuhaku hanya bertemu Steven pada saat kuliah saja, yaitu setiap hari kec
 ### Jawaban
 Untuk soal e, kita diminta untuk mengekstrak file zip yang sudah dibuat dan kembali membuat zip file pada jam-jam dan hari-hari tertentu. 
 Untuk menyelesaikan soal e, kita hanya perlu menuliskan perintah di crontab agar pada jam-jam yang diminta perintah yang sesuai dieksekusi.
+
+### Kendala yang dialami
+Tidak biasa memperhatikan spasi sehingga apabila terjadi error untuk menemukan kesalahannya juga membutuhkan waktu
+
 
 ### Revisi 3A
 perubahan yang dilakukan adalah digunakannya awk dalam proses pencarian duplikat gambar yang telah diunduh. Prosesnya adalah, ketika gambar diunduh, location gambar akan diekstrak dari log sementara dan dibandingkan dengan log keseluruhan unduhan. Apabila ditemukan kesamaan, gambar akan dihapus dan iterasi download akan diteruskan. Apabila tidak ditemukan kesamaan, log sementara akan ditambahkan ke log keseluruhan dan gambar akan ditambahkan ke dalam koleksi.
