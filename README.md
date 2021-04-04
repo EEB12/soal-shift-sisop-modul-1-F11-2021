@@ -64,12 +64,11 @@ Sama seperti penjelasan pada bagian b, hanya saja untuk bagian e, kita diminta u
 ```
 printf "ERROR,COUNT\n" > "error_message.csv"
 ```
+Berikut hasil outputnya :
+<img width="384" alt="output 1d" src="https://user-images.githubusercontent.com/74484044/113507711-6221e480-9576-11eb-82de-10869c254105.png"><img width="376" alt="output 1 1d" src="https://user-images.githubusercontent.com/74484044/113507708-5f26f400-9576-11eb-8002-ac59d464fddc.png">
 
 ### Bagian e
-Semua informasi yang didapatkan pada poin c dituliskan ke dalam file user_statistic.csv dengan header Username,INFO,ERROR diurutkan berdasarkan username secara ascending. Catatan :
-	- Setiap baris pada file syslog.log mengikuti pola berikut :
-	  <time> <hostname> <app_name>: <log_type> <log_message> (<username>)
-	- Tidak boleh menggunakan AWK
+Semua informasi yang didapatkan pada poin c dituliskan ke dalam file user_statistic.csv dengan header Username,INFO,ERROR diurutkan berdasarkan username secara ascending.
 
 ## Soal No.2
 Steven dan Manis mendirikan sebuah startup bernama “TokoShiSop”. Sedangkan kamu dan Clemong adalah karyawan pertama dari TokoShiSop. Setelah tiga tahun bekerja, Clemong diangkat menjadi manajer penjualan TokoShiSop, sedangkan kamu menjadi kepala gudang yang mengatur keluar masuknya barang.
