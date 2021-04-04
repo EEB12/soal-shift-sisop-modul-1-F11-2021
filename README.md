@@ -42,6 +42,7 @@ printf "Total semua kemunculan error : %d\n" $(grep -c "ERROR" syslog.log);
 - Karena awalnya pesan tersebut masih mengandung jenis log dan nama user, maka kami memisahkannya dengan menggunakan ```grep -oE "ERROR\s([A-Z])([a-z]+)(\s[a-zA-Z']+){1,6}"```, lalu difilter lagi unique message-nya menggunakan ```| sort | uniq |```, kemudian menggunakan command ```while read -r row``` untuk menampilkan pesan error beserta masing-masing jumlah kemunculannya, dan terakhir ```sort -rt',' -nk2``` digunakan untuk mengurutkan pesan error berdasarkan dari yang paling banyak muncul hingga yang paling sedikit muncul.
 
 Berikut adalah hasil outputnya :
+
 <img width="392" alt="output 1b" src="https://user-images.githubusercontent.com/74484044/113507350-15d5a500-9574-11eb-9ad5-9c6cd1f00808.png"> <img width="384" alt="output 1 1b" src="https://user-images.githubusercontent.com/74484044/113507356-20903a00-9574-11eb-95f0-8927e73ecb59.png">
 
 ### c.
