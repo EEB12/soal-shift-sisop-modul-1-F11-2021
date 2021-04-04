@@ -97,6 +97,7 @@ done | sort >> user_statistic.csv;
 ```
 Berikut adalah hasil output pada file user_statistic.csv :
 
+<img width="208" alt="Screen Shot 2021-04-04 at 21 40 10" src="https://user-images.githubusercontent.com/74484044/113512409-b3d66900-958e-11eb-8ce4-6a15d6173d6c.png">
 
 ## Soal No.2
 Steven dan Manis mendirikan sebuah startup bernama “TokoShiSop”. Sedangkan kamu dan Clemong adalah karyawan pertama dari TokoShiSop. Setelah tiga tahun bekerja, Clemong diangkat menjadi manajer penjualan TokoShiSop, sedangkan kamu menjadi kepala gudang yang mengatur keluar masuknya barang.
