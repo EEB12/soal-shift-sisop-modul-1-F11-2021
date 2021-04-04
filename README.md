@@ -1,12 +1,10 @@
 # Soal Shift Modul 1 Sisop 2021 - Kelompok F11
 
 ## Soal No. 1
-Ryujin baru saja diterima sebagai IT support di perusahaan Bukapedia. Dia diberikan tugas untuk membuat laporan harian untuk aplikasi internal perusahaan, ticky. Terdapat 2 laporan yang harus dia buat, yaitu laporan daftar peringkat pesan error terbanyak yang dibuat oleh ticky dan laporan penggunaan user pada aplikasi ticky. Untuk membuat laporan tersebut, Ryujin harus melakukan beberapa hal berikut :
-(Tidak Selesai)
+Ryujin diberikan tugas membuat laporan harian untuk aplikasi internal perusahaan, ticky. Terdapat 2 laporan yang harus dibuat, yakni laporan daftar peringkat pesan error terbanyak yang dibuat oleh ticky dan laporan penggunaan user pada aplikasi ticky. Untuk membuatnya, Ryujin harus melakukan beberapa hal berikut :
 
 ### a.
-Mengumpulkan informasi dari log aplikasi yang terdapat pada file syslog.log. Informasi yang diperlukan antara lain: jenis log (ERROR/INFO), pesan log, dan username pada setiap baris lognya. Karena Ryujin merasa kesulitan jika harus memeriksa satu per satu baris secara manual, dia menggunakan regex untuk mempermudah pekerjaannya. Bantulah Ryujin membuat regex tersebut.
-Penjelasan : Bingung dalam memahami Regex.
+Mengumpulkan informasi dari log aplikasi yang terdapat pada file syslog.log. Informasi yang diperlukan antara lain : jenis log (ERROR/INFO), pesan log, dan username pada setiap baris lognya. Agar lebih jelas, kami memasukkan hasil informasi ke dalam file syslog.txt.
 
 ### b.
 Kemudian, Ryujin harus menampilkan semua pesan error yang muncul beserta jumlah kemunculannya.
