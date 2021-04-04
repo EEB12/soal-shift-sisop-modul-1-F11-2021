@@ -86,7 +86,17 @@ Berikut hasil outputnya :
 <img width="384" alt="output 1d" src="https://user-images.githubusercontent.com/74484044/113507711-6221e480-9576-11eb-82de-10869c254105.png"> <img width="376" alt="output 1 1d" src="https://user-images.githubusercontent.com/74484044/113507708-5f26f400-9576-11eb-8002-ac59d464fddc.png">
 
 ### Bagian e
-Semua informasi yang didapatkan pada poin c dituliskan ke dalam file user_statistic.csv dengan header Username,INFO,ERROR diurutkan berdasarkan username secara ascending.
+Semua informasi yang didapatkan pada poin c dituliskan ke dalam file user_statistic.csv dengan header Username,INFO,ERROR diurutkan berdasarkan username secara ascending. Penjelasan :
+- Sama seperti pada bagian c, hanya saja hasil output dimasukkan ke dalam file bernama user_statistic.csv dan urutan yang dibalik, dari error-info, menjadi info-error. Berikut syntax-nya :
+```
+printf "Username,INFO,ERROR\n" > "user_statistic.csv"; #header
+for name in $username
+do
+    printf "%s,%d,%d\n" $name $(grep -cP "INFO.*($name)" syslog.log) $(grep -cP "ERROR.*($name)" syslog.log);
+done | sort >> user_statistic.csv;
+```
+Berikut adalah hasil output pada file user_statistic.csv :
+
 
 ## Soal No.2
 Steven dan Manis mendirikan sebuah startup bernama “TokoShiSop”. Sedangkan kamu dan Clemong adalah karyawan pertama dari TokoShiSop. Setelah tiga tahun bekerja, Clemong diangkat menjadi manajer penjualan TokoShiSop, sedangkan kamu menjadi kepala gudang yang mengatur keluar masuknya barang.
