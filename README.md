@@ -15,9 +15,10 @@ Penjelasan :
 - .* digunakan untuk mendapatkan karakter apapun setelah jenis log
 - | digunakan sebagain tanda/operator **or** 
 
-Berikut adalah output yang dihasilkan :
+Berikut adalah output yang dihasilkan, menampilkan 1-100 informasi :
 
 <img width="535" alt="output 1a" src="https://user-images.githubusercontent.com/74484044/113504951-f0419f00-9565-11eb-8d87-6c9e6270c4cb.png">
+<img width="493" alt="output 1 1a" src="https://user-images.githubusercontent.com/74484044/113505168-5e3a9600-9567-11eb-9e40-30c526d99b82.png">
 
 ### b.
 Kemudian, Ryujin harus menampilkan semua pesan error yang muncul beserta jumlah kemunculannya.
