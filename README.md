@@ -17,7 +17,7 @@ Penjelasan :
 
 Berikut adalah output yang dihasilkan, menampilkan 1-100 informasi :
 
-<img width="535" alt="output 1a" src="https://user-images.githubusercontent.com/74484044/113507454-bdeb6e00-9574-11eb-8607-9617fd551be8.png"> <img width="493" alt="output 1 1a" src="https://user-images.githubusercontent.com/74484044/113505168-5e3a9600-9567-11eb-9e40-30c526d99b82.png">
+<img width="535" alt="output 1a" src="https://user-images.githubusercontent.com/74484044/113507454-bdeb6e00-9574-11eb-8607-9617fd551be8.png"><img width="493" alt="output 1 1a" src="https://user-images.githubusercontent.com/74484044/113505168-5e3a9600-9567-11eb-9e40-30c526d99b82.png">
 
 ### Bagian b
 Ryujin harus menampilkan semua pesan error yang muncul beserta jumlah kemunculannya. Penjelasan :
