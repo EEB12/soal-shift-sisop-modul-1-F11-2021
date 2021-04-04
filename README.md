@@ -19,8 +19,25 @@ Berikut adalah output yang dihasilkan, menampilkan 1-100 informasi :
 
 <img width="493" alt="output 1 1a" src="https://user-images.githubusercontent.com/74484044/113505168-5e3a9600-9567-11eb-9e40-30c526d99b82.png">
 
-### b.
-Kemudian, Ryujin harus menampilkan semua pesan error yang muncul beserta jumlah kemunculannya.
+### Bagian b
+Ryujin harus menampilkan semua pesan error yang muncul beserta jumlah kemunculannya. Penjelasan :
+- Disini kami menampilkan terlebih dahulu semua pesan error yang ada
+```
+grep -oE "ERROR\s([A-Z])([a-z]+)(\s[a-zA-Z']+){1,6}" syslog.log;
+```
+- Lalu kami menampilkan pesan error beserta jumlah kemunculannya secara berurut dari yang paling banyak hingga yang paling sedikit muncul
+```
+echo "$(grep -oE 'ERROR.*' syslog.log)" | grep -oE "([A-Z][a-z]+)\s(['A-Za-z]+\s){1,6}" | sort | uniq |
+    while read -r row
+    do
+        countError=$(grep -c "$row" syslog.log);
+        echo "$row,$countError";
+    done | sort -rt',' -nk2;
+```
+- Kemudian barulah menampilkan total keseluruhan dari pesan error yang muncul
+```
+printf "Total semua kemunculan error : %d\n" $(grep -c "ERROR" syslog.log);
+```
 
 ### c.
 Ryujin juga harus dapat menampilkan jumlah kemunculan log ERROR dan INFO untuk setiap user-nya. Setelah semua informasi yang diperlukan telah disiapkan, kini saatnya Ryujin menuliskan semua informasi tersebut ke dalam laporan dengan format file csv.
