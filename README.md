@@ -16,6 +16,7 @@ Penjelasan :
 - | digunakan sebagain tanda/operator **or** 
 
 Berikut adalah output yang dihasilkan :
+
 <img width="535" alt="output 1a" src="https://user-images.githubusercontent.com/74484044/113504951-f0419f00-9565-11eb-8d87-6c9e6270c4cb.png">
 
 ### b.
