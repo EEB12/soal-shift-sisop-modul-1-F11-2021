@@ -3,8 +3,20 @@
 ## Soal No. 1
 Ryujin diberikan tugas membuat laporan harian untuk aplikasi internal perusahaan, ticky. Terdapat 2 laporan yang harus dibuat, yakni laporan daftar peringkat pesan error terbanyak yang dibuat oleh ticky dan laporan penggunaan user pada aplikasi ticky. Untuk membuatnya, Ryujin harus melakukan beberapa hal berikut :
 
-### a.
-Mengumpulkan informasi dari log aplikasi yang terdapat pada file syslog.log. Informasi yang diperlukan antara lain : jenis log (ERROR/INFO), pesan log, dan username pada setiap baris lognya. Agar lebih jelas, kami memasukkan hasil informasi ke dalam file syslog.txt.
+### Bagian a
+Mengumpulkan informasi dari log aplikasi yang terdapat pada file syslog.log. Informasi yang diperlukan yakni : jenis log (ERROR/INFO), pesan log, dan username pada setiap baris lognya. Agar lebih jelas, kami memasukkan hasil informasi ke dalam file syslog.txt. Berikut adalah syntax-nya :
+```
+grep -oE "(INFO.*)|(ERROR.*)" syslog.log > syslog.txt;
+```
+Penjelasan :
+- grep digunakan untuk menampilkan jumlah baris yang sesuai pola
+- -o digunakan untuk mencetak bagian dari baris yang sesuai pola
+- -E digunakan sebagai penanda bahwa pola yang ada/diberikan adalah extended regex pattern
+- .* digunakan untuk mendapatkan karakter apapun setelah jenis log
+- | digunakan sebagain tanda/operator **or** 
+
+Berikut adalah output yang dihasilkan :
+<img width="535" alt="output 1a" src="https://user-images.githubusercontent.com/74484044/113504951-f0419f00-9565-11eb-8d87-6c9e6270c4cb.png">
 
 ### b.
 Kemudian, Ryujin harus menampilkan semua pesan error yang muncul beserta jumlah kemunculannya.
