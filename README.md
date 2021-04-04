@@ -45,13 +45,27 @@ Berikut adalah hasil outputnya :
 
 <img width="392" alt="output 1b" src="https://user-images.githubusercontent.com/74484044/113507350-15d5a500-9574-11eb-9ad5-9c6cd1f00808.png"> <img width="384" alt="output 1 1b" src="https://user-images.githubusercontent.com/74484044/113507356-20903a00-9574-11eb-95f0-8927e73ecb59.png">
 
-### c.
-Ryujin juga harus dapat menampilkan jumlah kemunculan log ERROR dan INFO untuk setiap user-nya. Setelah semua informasi yang diperlukan telah disiapkan, kini saatnya Ryujin menuliskan semua informasi tersebut ke dalam laporan dengan format file csv.
+### Bagian c
+Ryujin juga harus dapat menampilkan jumlah kemunculan log ERROR dan INFO untuk setiap user-nya, serta menuliskan semua informasi tersebut ke dalam laporan dengan format file csv.
 
-### d.
-Semua informasi yang didapatkan pada poin b dituliskan ke dalam file error_message.csv dengan header Error,Count yang kemudian diikuti oleh daftar pesan error dan jumlah kemunculannya diurutkan berdasarkan jumlah kemunculan pesan error dari yang terbanyak.
+### Bagian d
+Semua informasi yang didapatkan pada poin b dituliskan ke dalam file error_message.csv dengan header Error,Count yang kemudian diikuti oleh daftar pesan error dan jumlah kemunculannya diurutkan berdasarkan jumlah kemunculan pesan error dari yang terbanyak. Berikut syntax-nya :
+```
+printf "ERROR,COUNT\n" > "error_message.csv"; #header
+echo "$(grep -oE 'ERROR.*' syslog.log)" | grep -oE "([A-Z][a-z]+)\s(['A-Za-z]+\s){1,6}" | sort | uniq |
+    while read -r row
+    do
+        countError=$(grep -c "$row" syslog.log);
+        echo "$row,$countError";
+    done | sort -rt',' -nk2 >> error_message.csv;
+```
+Penjelasan :
+Sama seperti penjelasan pada bagian b, hanya saja untuk bagian e, kita diminta untuk menuliskan hasil outputnya ke dalam file error_message.csv dengan menggunakan ```>``` pada :
+```
+printf "ERROR,COUNT\n" > "error_message.csv"
+```
 
-### e.
+### Bagian e
 Semua informasi yang didapatkan pada poin c dituliskan ke dalam file user_statistic.csv dengan header Username,INFO,ERROR diurutkan berdasarkan username secara ascending. Catatan :
 	- Setiap baris pada file syslog.log mengikuti pola berikut :
 	  <time> <hostname> <app_name>: <log_type> <log_message> (<username>)
