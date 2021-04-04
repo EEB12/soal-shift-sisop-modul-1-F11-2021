@@ -65,6 +65,7 @@ Sama seperti penjelasan pada bagian b, hanya saja untuk bagian e, kita diminta u
 printf "ERROR,COUNT\n" > "error_message.csv"
 ```
 Berikut hasil outputnya :
+
 <img width="384" alt="output 1d" src="https://user-images.githubusercontent.com/74484044/113507711-6221e480-9576-11eb-82de-10869c254105.png"><img width="376" alt="output 1 1d" src="https://user-images.githubusercontent.com/74484044/113507708-5f26f400-9576-11eb-8002-ac59d464fddc.png">
 
 ### Bagian e
