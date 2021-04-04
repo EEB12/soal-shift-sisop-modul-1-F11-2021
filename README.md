@@ -38,6 +38,8 @@ echo "$(grep -oE 'ERROR.*' syslog.log)" | grep -oE "([A-Z][a-z]+)\s(['A-Za-z]+\s
 ```
 printf "Total semua kemunculan error : %d\n" $(grep -c "ERROR" syslog.log);
 ```
+- -c diatas berfungsi untuk menghitung jumlah baris yang berisi kata **ERROR**
+- Karena awalnya pesan tersebut masih mengandung jenis log dan nama user, maka kami memisahkannya dengan menggunakan ```grep -oE "ERROR\s([A-Z])([a-z]+)(\s[a-zA-Z']+){1,6}"```, lalu difilter lagi unique message-nya menggunakan ```| sort | uniq |```, kemudian menggunakan command ```while read -r row``` untuk menampilkan pesan error beserta masing-masing jumlah kemunculannya, dan terakhir ```sort -rt',' -nk2``` digunakan untuk mengurutkan pesan error berdasarkandari yang paling banyak muncul hingga yang paling sedikit muncul.
 
 ### c.
 Ryujin juga harus dapat menampilkan jumlah kemunculan log ERROR dan INFO untuk setiap user-nya. Setelah semua informasi yang diperlukan telah disiapkan, kini saatnya Ryujin menuliskan semua informasi tersebut ke dalam laporan dengan format file csv.
