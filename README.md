@@ -397,11 +397,11 @@ Karena kuuhaku hanya bertemu Steven pada saat kuliah saja, yaitu setiap hari kec
 Untuk soal e, kita diminta untuk mengekstrak file zip yang sudah dibuat dan kembali membuat zip file pada jam-jam dan hari-hari tertentu. 
 Untuk menyelesaikan soal e, kita hanya perlu menuliskan perintah di crontab agar pada jam-jam yang diminta perintah yang sesuai dieksekusi.
 
-###Revisi 3A
+### Revisi 3A
 perubahan yang dilakukan adalah digunakannya awk dalam proses pencarian duplikat gambar yang telah diunduh. Prosesnya adalah, ketika gambar diunduh, location gambar akan diekstrak dari log sementara dan dibandingkan dengan log keseluruhan unduhan. Apabila ditemukan kesamaan, gambar akan dihapus dan iterasi download akan diteruskan. Apabila tidak ditemukan kesamaan, log sementara akan ditambahkan ke log keseluruhan dan gambar akan ditambahkan ke dalam koleksi.
 
-###Revisi 3C
+### Revisi 3C
 perubahan dilakukan sebagai kelanjutan dari perubahan yang telah dilakukan untuk soal 3a. Proses komparasi menggunakan awk, dan agar pengunduhan dilakukan secara berselang-seling, digunakan logika "Apabila kemarin lusa suatu jenis gambar telah diunduh (kucing atau kelinci) maka pada hari ini jenis gambar tersebut akan diunduh lagi".
 
-###Revisi 3E
+### Revisi 3E
 perubahan yang dilakukan yakni perubahan perintah yang dituliskan dalam crontab itu sendiri. Penginputan password untuk unzip menggunakan -P dan password langsung diassign ke -P, bukan dimasukkan ke suatu variabel terlebih dahulu.
