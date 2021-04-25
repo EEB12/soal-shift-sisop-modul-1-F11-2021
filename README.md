@@ -1,4 +1,4 @@
-# Soal Shift Modul 1 Sisop 2021 - Kelompok F11
+# soal-shift-sisop-modul-1-F11-2021
 
 ## Soal No. 1
 Ryujin diberikan tugas membuat laporan harian untuk aplikasi internal perusahaan, ticky. Terdapat 2 laporan yang harus dibuat, yakni laporan daftar peringkat pesan error terbanyak yang dibuat oleh ticky dan laporan penggunaan user pada aplikasi ticky. Untuk membuatnya, Ryujin harus melakukan beberapa hal berikut :
